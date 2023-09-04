@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SecondRouteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,15 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('welcome/{secondroute}', function ($slug) {
-    $path = __DIR__ ."/../resources/posts/{$slug}.html";
+Route::get('/secondroute', function () {
 
-    if (! file_exists($path)){
-        ddd('file does not exist');
-    }
-    $secondroute = file_get_contents($slug);
+    return view('secondroute');
 
-    return view('secondroute', [
-        'secondroute' => $secondroute
-    ]);
-});
+})->name('second-route');
+
+
+
+Route::resource('products', SecondRouteController::class);

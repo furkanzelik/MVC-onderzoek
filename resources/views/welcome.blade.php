@@ -10,6 +10,6 @@
 </head>
 <body>
 <h1>Hello World ! </h1>
-<p><a href="/posts/second-route">To another route</a></p>
+<p><a href="{{route('second-route')}}">To another route</a></p>
 </body>
 </html>
